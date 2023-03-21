@@ -89,8 +89,9 @@ pub struct ParticipantInfo {
 pub async fn get_matches() -> Vec<Match> {
     let config = Config::parse();
     let client = reqwest::Client::new();
+    let tournament = format!("https://api.challonge.com/v1/tournaments/{}/matches.json", config.tournamentid)
     let resp = client
-        .get("https://api.challonge.com/v1/tournaments/12521692/matches.json")
+        .get(tournament)
         .basic_auth(config.user, Some(config.secret))
         .send()
         .await
