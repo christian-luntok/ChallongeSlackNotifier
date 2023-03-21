@@ -21,6 +21,9 @@ pub struct Config {
    user: String,
 
    #[arg(short, long, default_value_t = 5000)]
+   tournamentid: u64,
+
+   #[arg(short, long, default_value_t = 5000)]
    poll: u64,
 
    #[arg(short, long, default_value_t = false)] 
