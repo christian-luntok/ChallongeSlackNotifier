@@ -90,7 +90,7 @@ pub async fn get_matches() -> Vec<Match> {
     let config = Config::parse();
     let client = reqwest::Client::new();
     let resp = client
-        .get("https://api.challonge.com/v1/tournaments/12088582/matches.json")
+        .get("https://api.challonge.com/v1/tournaments/12521692/matches.json")
         .basic_auth(config.user, Some(config.secret))
         .send()
         .await
@@ -113,7 +113,7 @@ pub fn get_particpants() -> Vec<Participant> {
     let config = Config::parse();
     let client = reqwest::blocking::Client::new();
     let participants = client
-        .get("https://api.challonge.com/v1/tournaments/12088582/participants.json")
+        .get("https://api.challonge.com/v1/tournaments/12521692/participants.json")
         .basic_auth(config.user, Some(config.secret))
         .send()
         .unwrap()
