@@ -20,7 +20,7 @@ pub struct Config {
    #[arg(short, long)]
    user: String,
 
-   #[arg(short, long, default_value_t = 5000)]
+   #[arg(short, long, default_value_t = 12521692)]
    tournamentid: u64,
 
    #[arg(short, long, default_value_t = 5000)]
