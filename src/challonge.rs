@@ -113,8 +113,9 @@ pub fn get_participant_from_id(id: i64) -> ParticipantInfo {
 pub fn get_particpants() -> Vec<Participant> {
     let config = Config::parse();
     let client = reqwest::blocking::Client::new();
+    let tournament = format!("https://api.challonge.com/v1/tournaments/{}/participants.json", config.tournamentid);
     let participants = client
-        .get("https://api.challonge.com/v1/tournaments/12521692/participants.json")
+        .get(tournament)
         .basic_auth(config.user, Some(config.secret))
         .send()
         .unwrap()
